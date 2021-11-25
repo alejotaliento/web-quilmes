@@ -1,12 +1,20 @@
 import React from "react";
-import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
+
+import { dataImages } from "./data";
+import styles from "./index.module.scss";
 
 export const Header = () => {
    return (
       <>
-         <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
-            <Flex alignItems={"center"} h={16} justifyContent={"space-between"}>
-               <Box>Logo</Box>
+         <Box as="header" className={styles.root}>
+            <Flex alignItems={"center"} h={16} justifyContent={"space-between"} margin={4}>
+               <Image
+                  alt="Segun Adebayo"
+                  className={styles.logo}
+                  src={dataImages.logoHeader}
+                  width={90}
+               />
             </Flex>
          </Box>
       </>

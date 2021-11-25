@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, Flex, Image } from "@chakra-ui/react";
 
-import { dataImages } from "./data";
+import { dataImages } from "../../data";
+
 import styles from "./index.module.scss";
 
 export const Header = () => {

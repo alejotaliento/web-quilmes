@@ -1,0 +1,15 @@
+.buttonBanner {
+   position: absolute;
+   margin-left: 50px;
+   width: 120px;
+   background-color: #ffe922;
+   font-family: Century;
+   font-weight: 100;
+   color: #ffffff;
+   letter-spacing: 0em;
+   line-height: 0;
+
+   &:hover {
+      background-color: #ffe922a3;
+   }
+}

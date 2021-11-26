@@ -1,43 +1,75 @@
-.principalSection {
-   .title {
-      font-family: Century;
-      color: white;
-      font-size: 55px;
-      font-weight: 100;
-      line-height: 1.2;
-   }
-   .subtitle {
-      color: white;
-      font-size: 25px;
-   }
-   .endText {
-      align-self: flex-end;
-      color: white;
-      font-size: 15px;
-      margin: 30px;
-      text-align: center;
-      width: 70%;
-   }
-   .buttonBanner {
-      position: absolute;
-      margin-left: 50px;
-      width: 120px;
-      height: 35px;
-      background-color: #ffe922;
-      font-family: Arial;
-      font-weight: 100;
-      font-size: 15px;
-      letter-spacing: 0em;
-      line-height: 0;
+.title {
+   font-family: Century;
+   color: white;
+   font-size: 3.5rem;
+   font-weight: 100;
+   line-height: 1.2;
 
-      &:hover {
-         background-color: #ffe922a3;
-      }
+   @media only screen and (max-width: 768px) {
+      font-size: 40px;
+   }
+
+   @media only screen and (max-width: 425px) {
+   }
+}
+.subtitle {
+   color: white;
+   font-size: 1.5rem;
+
+   @media only screen and (max-width: 768px) {
+      font-size: 18px;
+   }
+
+   @media only screen and (max-width: 425px) {
+   }
+}
+.endText {
+   align-self: flex-end;
+   text-align: center;
+   margin: 30px;
+   color: white;
+   font-size: 1rem;
+   width: 75%;
+
+   @media only screen and (max-width: 768px) {
+      padding: 5px;
+      margin: 5px;
+      font-size: 0.7rem;
+      width: 85%;
+   }
+
+   @media only screen and (max-width: 425px) {
+      display: none;
+   }
+}
+
+.buttonBanner {
+   position: absolute;
+   width: 120px;
+   height: 35px;
+   background-color: #ffe922 !important;
+   font-family: Arial;
+   font-weight: 100;
+   font-size: 1rem;
+   letter-spacing: 0em;
+   line-height: 0;
+
+   &:hover {
+      background-color: #ffe922a3;
+   }
+
+   &:active {
+      background-color: #ffe922a3;
    }
 }
 
 .rowButton {
-   align-self: flex-end;
+   background-color: transparent !important;
+   outline-color: white !important;
+   color: white;
+   transition: all 0.3s ease-out;
    bottom: 0;
-   margin: 0px 10px 10px 0px;
+   margin: 10px;
+   height: 30px !important;
+   width: 30px !important;
 }

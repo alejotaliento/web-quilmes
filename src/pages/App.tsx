@@ -1,17 +1,27 @@
 import React from "react";
-import { Stack, Button, Text, VStack, useBreakpointValue, Box } from "@chakra-ui/react";
+import {
+   Stack,
+   Button,
+   Text,
+   VStack,
+   useBreakpointValue,
+   Box,
+   useMediaQuery,
+} from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
 import { Banner, SplitWithImage } from "../components";
 import styles from "../styles/Home.module.scss";
 
 function App() {
+   const [isLargerThan425] = useMediaQuery("(max-width: 425px)");
+
    return (
       <>
-         <Box as="section" className={styles.principalSection}>
+         <Box as="section" className={styles.principalSection} margin={0}>
             <Banner image="https://image.freepik.com/free-photo/glass-bottles-beer-with-glass-ice-dark-background_1150-8901.jpg">
                <VStack
-                  alignItems="flex-start"
+                  alignItems={isLargerThan425 ? "center" : "flex-start"}
                   bgGradient="linear(to-r, blackAlpha.600, transparent)"
                   className={styles.example}
                   justifyContent="center"
@@ -31,7 +41,7 @@ function App() {
                      <Box alignSelf="flex-start" direction="row">
                         <Button
                            className={styles.buttonBanner}
-                           margin="5px 5px 5px 50px"
+                           margin="0px 0px 0px 50px !important"
                            rounded="full"
                         >
                            VER MÁS
@@ -43,7 +53,7 @@ function App() {
                <Box
                   alignSelf="flex-end"
                   justifySelf="center"
-                  left="50%"
+                  left="45 %"
                   position="absolute"
                   right="50%"
                >
@@ -64,10 +74,10 @@ function App() {
          <Box as="section">
             <SplitWithImage
                containerProps={{
-                  bgColor: "blue",
+                  bgColor: "#031532",
                }}
                image={
-                  "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                  "https://image.freepik.com/foto-gratis/primer-plano-hombres-brindando-cerveza_171337-13664.jpg"
                }
                imageOrientation="right"
             >
@@ -81,10 +91,16 @@ function App() {
                   w="full"
                >
                   <Text as="h1" className={styles.title}>
-                     Lorem ipsum dolor sit amet
+                     PUNTOS DE ENCUENTRO
                   </Text>
-                  <Text as="h2" className={styles.subtitle}>
-                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  <Text
+                     alignSelf="center"
+                     as="h2"
+                     className={styles.subtitle}
+                     fontSize={isLargerThan425 ? "15px" : "35px"}
+                  >
+                     Además de la Quilmes que tomás en tu casa queremos que disfrutes la que
+                     servimos en la nuestra, llega directamente de la cervecería
                   </Text>
                   <Button alignSelf="center" className={styles.buttonBanner} rounded="full">
                      CONOCER

@@ -34,15 +34,15 @@ export const SplitWithImage: React.FC<SplitWithImage> = ({
 }) => {
    return (
       <Container maxW="full" padding={0} {...containerProps}>
-         <SimpleGrid columns={{ base: 2, md: 2 }} h="100vh">
+         <SimpleGrid columns={{ base: 1, md: 2 }} h="100vh">
             {imageOrientation && imageOrientation === "left" && (
-               <Flex h="full">
+               <Flex h="full" w="full">
                   <Image alt={"feature image"} objectFit={"cover"} src={image} />
                </Flex>
             )}
             {children}
             {imageOrientation && imageOrientation === "right" && (
-               <Flex h="full">
+               <Flex h="full" w="full">
                   <Image alt={"feature image"} objectFit={"cover"} src={image} />
                </Flex>
             )}

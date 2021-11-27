@@ -11,12 +11,16 @@ function App() {
          <Box as="section" className={styles.principalSection}>
             <Banner image="https://image.freepik.com/free-photo/glass-bottles-beer-with-glass-ice-dark-background_1150-8901.jpg">
                <VStack
+                  alignItems="flex-start"
                   bgGradient="linear(to-r, blackAlpha.600, transparent)"
-                  justify="center"
+                  className={styles.example}
+                  justifyContent="center"
+                  margin="0px !important"
+                  padding="0px !important"
                   px={useBreakpointValue({ base: 4, md: 8 })}
                   w="full"
                >
-                  <Stack align="flex-start" maxW="2xl" spacing={4}>
+                  <Stack align="flex-start" marginLeft="20px" maxW="2xl" spacing={4}>
                      <Text as="h1" className={styles.title}>
                         EL SABOR DEL <br /> ENCUENTRO
                      </Text>
@@ -36,7 +40,13 @@ function App() {
                   </Stack>
                </VStack>
 
-               <Box alignSelf="flex-end">
+               <Box
+                  alignSelf="flex-end"
+                  justifySelf="center"
+                  left="50%"
+                  position="absolute"
+                  right="50%"
+               >
                   <Button className={styles.rowButton} rounded="full">
                      <ArrowDownIcon h={4} w={4} />
                   </Button>

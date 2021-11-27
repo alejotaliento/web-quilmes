@@ -48,7 +48,7 @@ function App() {
                   right="50%"
                >
                   <Button className={styles.rowButton} rounded="full">
-                     <ArrowDownIcon Fw={5} h={5} />
+                     <ArrowDownIcon h={5} w={5} />
                   </Button>
                </Box>
 
@@ -69,6 +69,7 @@ function App() {
                image={
                   "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                }
+               imageOrientation="right"
             >
                <VStack
                   align="flex-start"

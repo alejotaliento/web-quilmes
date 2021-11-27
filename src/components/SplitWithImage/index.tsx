@@ -12,6 +12,7 @@ export interface FeatureProps {
 export interface SplitWithImage {
    containerProps?: ContainerProps;
    image: string;
+   imageOrientation: "left" | "right";
 }
 
 export const Feature = ({ text, icon, iconBg }: FeatureProps) => {
@@ -25,14 +26,26 @@ export const Feature = ({ text, icon, iconBg }: FeatureProps) => {
    );
 };
 
-export const SplitWithImage: React.FC<SplitWithImage> = ({ children, image, containerProps }) => {
+export const SplitWithImage: React.FC<SplitWithImage> = ({
+   children,
+   image,
+   containerProps,
+   imageOrientation,
+}) => {
    return (
       <Container maxW="full" padding={0} {...containerProps}>
          <SimpleGrid columns={{ base: 2, md: 2 }} h="100vh">
+            {imageOrientation && imageOrientation === "left" && (
+               <Flex h="full">
+                  <Image alt={"feature image"} objectFit={"cover"} src={image} />
+               </Flex>
+            )}
             {children}
-            <Flex h="full">
-               <Image alt={"feature image"} objectFit={"cover"} src={image} />
-            </Flex>
+            {imageOrientation && imageOrientation === "right" && (
+               <Flex h="full">
+                  <Image alt={"feature image"} objectFit={"cover"} src={image} />
+               </Flex>
+            )}
          </SimpleGrid>
       </Container>
    );

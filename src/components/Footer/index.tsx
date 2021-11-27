@@ -3,15 +3,16 @@ import {
    Box,
    Container,
    Divider,
-   // Link,
    Stack,
    Text,
    useColorModeValue,
    useMediaQuery,
+   Image,
 } from "@chakra-ui/react";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 import { SocialButton } from "../SocialButton";
-// import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { dataImages } from "../../data";
 
 export const Logo = (props: any) => {
    return (
@@ -30,64 +31,75 @@ export const Logo = (props: any) => {
 
 export const Footer = () => {
    const [isLargerThan425] = useMediaQuery("(max-width: 425px)");
-
-   console.log(isLargerThan425);
+   const [isLargerThan768] = useMediaQuery("(max-width: 768px)");
 
    return (
-      <Box
-         bg={useColorModeValue("gray.50", "gray.900")}
-         color={useColorModeValue("gray.700", "gray.200")}
-      >
+      /* TODO: Arreglar space-between entre los elementos del footer */
+      <Box bgColor="#031532" color={useColorModeValue("gray.700", "gray.200")}>
          <Container
-            align={{ base: "center", md: "center" }}
+            align={{ base: "center" }}
             as={Stack}
             direction={{ base: "column", md: "row" }}
-            justify={{ base: "center", md: "space-between" }}
-            maxW={"6xl"}
+            justify={{ base: "space-between" }}
+            maxW="full"
+            padding={4}
             py={4}
-            spacing={4}
          >
-            <Logo />
+            <Image
+               alt="Logo Footer"
+               cursor="pointer"
+               margin="15px"
+               src={dataImages.logoHeader}
+               width="180px"
+            />
 
-            <Stack direction="column" p={5} spacing={5}>
+            <Stack color="white" direction="column" py={5} spacing={10} width="100%">
                <Box
                   alignItems="center"
+                  alignSelf="center"
                   display="flex"
-                  flexDirection={isLargerThan425 ? "column" : "row"}
+                  flexDirection={isLargerThan768 ? "column" : "row"}
                   textAlign="center"
                >
                   <Text>POLITICA DE PRIVACIDAD</Text>
                   <Divider
                      bgColor="white"
-                     height={isLargerThan425 ? "1px" : "15px"}
+                     height={isLargerThan768 ? "1px" : "15px"}
                      margin="10px"
-                     orientation={isLargerThan425 ? "horizontal" : "vertical"}
+                     orientation={isLargerThan768 ? "horizontal" : "vertical"}
                   />
                   <Text>BASES Y CONDICIONES</Text>
                   <Divider
                      bgColor="white"
-                     height={isLargerThan425 ? "1px" : "15px"}
+                     height={isLargerThan768 ? "1px" : "15px"}
                      margin="10px"
-                     orientation={isLargerThan425 ? "horizontal" : "vertical"}
+                     orientation={isLargerThan768 ? "horizontal" : "vertical"}
                   />
                   <Text>OPORTUNIDADES LABORALES</Text>
                </Box>
                <Text textAlign="center">INFOMACION OFICIAL DE LA COMPAÑIA</Text>
-               <Text textAlign="center">© 2020 Chakra Templates. All rights reserved</Text>
+               <Text fontSize="13px" textAlign="center">
+                  BEBER CON MODERACIÓN.PROHIBIDA SU VENTA A MENORES DE 18 AÑOS. NO COMPARTA EL
+                  CONTENIDO CON MENORES. Quilmes®
+               </Text>
             </Stack>
 
-            <Stack direction="column" spacing={6}>
+            <Stack
+               direction={isLargerThan425 ? "row" : "column"}
+               margin="15px !important"
+               spacing={6}
+            >
                <SocialButton href={"#"} label={"Twitter"}>
-                  {/* <FaTwitter /> */}
-                  <span>icon</span>
+                  <FaTwitter size={30} />
                </SocialButton>
                <SocialButton href={"#"} label={"YouTube"}>
-                  {/* <FaYoutube /> */}
-                  <span>icon</span>
+                  <FaYoutube size={30} />
                </SocialButton>
                <SocialButton href={"#"} label={"Instagram"}>
-                  {/* <FaInstagram /> */}
-                  <span>icon</span>
+                  <FaInstagram size={30} />
+               </SocialButton>
+               <SocialButton href={"#"} label={"Facebook"}>
+                  <FaFacebook size={30} />
                </SocialButton>
             </Stack>
          </Container>

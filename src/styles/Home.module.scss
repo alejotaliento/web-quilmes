@@ -44,15 +44,15 @@
 }
 
 .buttonBanner {
-   position: absolute;
-   width: 120px;
-   height: 35px;
+   width: 120px !important;
+   height: 35px !important;
    background-color: #ffe922 !important;
-   font-family: Arial;
-   font-weight: 100;
-   font-size: 1rem;
-   letter-spacing: 0em;
-   line-height: 0;
+   font-family: Arial !important;
+   font-weight: 100 !important;
+   font-size: 0.8rem !important;
+   letter-spacing: 0em !important;
+   line-height: 0 !important;
+   color: black;
 
    &:hover {
       background-color: #ffe922a3;
@@ -70,6 +70,5 @@
    transition: all 0.3s ease-out;
    bottom: 0;
    margin: 10px;
-   height: 30px !important;
-   width: 30px !important;
+   padding: 0px !important;
 }

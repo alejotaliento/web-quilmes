@@ -48,7 +48,7 @@ function App() {
                   right="50%"
                >
                   <Button className={styles.rowButton} rounded="full">
-                     <ArrowDownIcon h={4} w={4} />
+                     <ArrowDownIcon Fw={5} h={5} />
                   </Button>
                </Box>
 

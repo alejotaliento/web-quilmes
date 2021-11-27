@@ -1,17 +1,19 @@
+import React from "react";
 import {
    Box,
-   chakra,
    Container,
+   Divider,
    // Link,
    Stack,
    Text,
    useColorModeValue,
-   VisuallyHidden,
+   useMediaQuery,
 } from "@chakra-ui/react";
-// import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import { ReactNode } from "react";
 
-const Logo = (props: any) => {
+import { SocialButton } from "../SocialButton";
+// import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
+export const Logo = (props: any) => {
    return (
       <svg height={32} viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" {...props}>
          <path
@@ -26,39 +28,11 @@ const Logo = (props: any) => {
    );
 };
 
-const SocialButton = ({
-   children,
-   label,
-   href,
-}: {
-   children: ReactNode;
-   label: string;
-   href: string;
-}) => {
-   return (
-      <chakra.button
-         _hover={{
-            bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
-         }}
-         alignItems={"center"}
-         as={"a"}
-         bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
-         cursor={"pointer"}
-         display={"inline-flex"}
-         h={8}
-         href={href}
-         justifyContent={"center"}
-         rounded={"full"}
-         transition={"background 0.3s ease"}
-         w={8}
-      >
-         <VisuallyHidden>{label}</VisuallyHidden>
-         {children}
-      </chakra.button>
-   );
-};
-
 export const Footer = () => {
+   const [isLargerThan425] = useMediaQuery("(max-width: 425px)");
+
+   console.log(isLargerThan425);
+
    return (
       <Box
          bg={useColorModeValue("gray.50", "gray.900")}
@@ -74,8 +48,35 @@ export const Footer = () => {
             spacing={4}
          >
             <Logo />
-            <Text>© 2020 Chakra Templates. All rights reserved</Text>
-            <Stack direction={"row"} spacing={6}>
+
+            <Stack direction="column" p={5} spacing={5}>
+               <Box
+                  alignItems="center"
+                  display="flex"
+                  flexDirection={isLargerThan425 ? "column" : "row"}
+                  textAlign="center"
+               >
+                  <Text>POLITICA DE PRIVACIDAD</Text>
+                  <Divider
+                     bgColor="white"
+                     height={isLargerThan425 ? "1px" : "15px"}
+                     margin="10px"
+                     orientation={isLargerThan425 ? "horizontal" : "vertical"}
+                  />
+                  <Text>BASES Y CONDICIONES</Text>
+                  <Divider
+                     bgColor="white"
+                     height={isLargerThan425 ? "1px" : "15px"}
+                     margin="10px"
+                     orientation={isLargerThan425 ? "horizontal" : "vertical"}
+                  />
+                  <Text>OPORTUNIDADES LABORALES</Text>
+               </Box>
+               <Text textAlign="center">INFOMACION OFICIAL DE LA COMPAÑIA</Text>
+               <Text textAlign="center">© 2020 Chakra Templates. All rights reserved</Text>
+            </Stack>
+
+            <Stack direction="column" spacing={6}>
                <SocialButton href={"#"} label={"Twitter"}>
                   {/* <FaTwitter /> */}
                   <span>icon</span>

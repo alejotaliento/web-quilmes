@@ -10,16 +10,21 @@ import {
 } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
-import { Banner, SplitWithImage } from "../components";
+import { Banner, Card, SplitWithImage } from "../components";
 import styles from "../styles/Home.module.scss";
+import { dataCervezas } from "../data";
 
 function App() {
    const [isLargerThan425] = useMediaQuery("(max-width: 425px)");
+   // const [isLargerThan768] = useMediaQuery("(max-width: 768px)");
 
    return (
       <>
          <Box as="section" className={styles.principalSection} margin={0}>
-            <Banner image="https://image.freepik.com/free-photo/glass-bottles-beer-with-glass-ice-dark-background_1150-8901.jpg">
+            <Banner
+               flexProps={{ height: "100vh" }}
+               image="https://image.freepik.com/free-photo/glass-bottles-beer-with-glass-ice-dark-background_1150-8901.jpg"
+            >
                <VStack
                   alignItems={isLargerThan425 ? "center" : "flex-start"}
                   bgGradient="linear(to-r, blackAlpha.600, transparent)"
@@ -72,6 +77,52 @@ function App() {
          </Box>
 
          <Box as="section">
+            <Banner
+               flexProps={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  minHeight: "700px",
+                  height: isLargerThan425 ? "auto" : "100vh",
+               }}
+               image="https://i.postimg.cc/xjMNB5xm/wil-stewart-UEr-Wo-QEo-Mrc-unsplash.jpg"
+            >
+               <Stack h="100%" marginY={20} padding={25}>
+                  <VStack spacing={5}>
+                     <Text as="h1" className={styles.title}>
+                        NUESTRAS VARIEDADES
+                     </Text>
+                     <Text as="h2" className={styles.subtitle} textAlign="center">
+                        Tenemos la cerveza perfecta para cada momento. Elegí la <br /> que más te
+                        guste y disfrútala con amigos.
+                     </Text>
+                  </VStack>
+                  <Stack
+                     alignItems="center"
+                     alignSelf="center"
+                     direction={isLargerThan425 ? "column" : "row"}
+                     justify="center"
+                     minHeight={500}
+                  >
+                     {dataCervezas.map((cerveza) => (
+                        <Card
+                           key={cerveza._id}
+                           product={{
+                              _id: cerveza._id,
+                              name: cerveza.name,
+                              image: {
+                                 url: cerveza.image.url
+                                    ? cerveza.image.url
+                                    : "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+                              },
+                           }}
+                        />
+                     ))}
+                  </Stack>
+               </Stack>
+            </Banner>
+         </Box>
+
+         <Box as="section" margin={0}>
             <SplitWithImage
                containerProps={{
                   bgColor: "#031532",
@@ -98,9 +149,10 @@ function App() {
                      as="h2"
                      className={styles.subtitle}
                      fontSize={isLargerThan425 ? "15px" : "35px"}
+                     width="85%"
                   >
-                     Además de la Quilmes que tomás en tu casa queremos que disfrutes la que
-                     servimos en la nuestra, llega directamente de la cervecería
+                     Además de la Quilmes que <br /> tomás en tu casa queremos que disfrutes la que
+                     servimos en la nuestra, llega directamente de <br /> la cervecería
                   </Text>
                   <Button alignSelf="center" className={styles.buttonBanner} rounded="full">
                      CONOCER

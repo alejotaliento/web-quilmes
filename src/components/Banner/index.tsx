@@ -1,16 +1,17 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, FlexProps } from "@chakra-ui/react";
 
 export interface BannerProps {
    image: string;
+   flexProps?: FlexProps;
 }
 
-export const Banner: React.FC<BannerProps> = ({ children, image }) => {
+export const Banner: React.FC<BannerProps> = ({ children, image, flexProps }) => {
    return (
       <Flex
+         {...flexProps}
          backgroundImage={`url(${image})`}
          backgroundPosition={"center center"}
          backgroundSize={"cover"}
-         h={"100vh"}
          w={"full"}
       >
          {children}

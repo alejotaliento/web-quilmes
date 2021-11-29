@@ -20,7 +20,7 @@ export const Footer = () => {
 
    return (
       /* TODO: Arreglar space-between entre los elementos del footer */
-      <Box bgColor="#031532" color={useColorModeValue("gray.700", "gray.200")}>
+      <Box as="footer" bgColor="#031532" color={useColorModeValue("gray.700", "gray.200")}>
          <Container
             align={{ base: "center" }}
             as={Stack}

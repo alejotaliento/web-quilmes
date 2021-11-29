@@ -21,7 +21,7 @@ a {
 h1,
 h2,
 h3 {
-  text-shadow: 0 0 1.2rem black;
+  text-shadow: 0 0 30px black;
 }
 
 h1 {

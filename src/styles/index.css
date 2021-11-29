@@ -1,5 +1,6 @@
 html,
 body {
+  background-color: #031532 !important;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
@@ -15,4 +16,23 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  text-shadow: 0 0 30px black;
+}
+
+h1 {
+  font-family: Century;
+}
+
+h2,
+h3 {
+  font-family: Mongolian;
+}
+
+section {
+  margin-bottom: 0px;
 }

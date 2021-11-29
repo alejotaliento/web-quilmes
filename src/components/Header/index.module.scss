@@ -2,15 +2,22 @@
    display: flex;
    justify-content: space-between;
    height: 75px;
-   background: #000;
    background: linear-gradient(0deg, transparent, #000);
    color: #fff;
    align-items: center;
    position: absolute;
    width: 100%;
+
+   @media only screen and (max-width: 425px) {
+      justify-content: center;
+   }
 }
 
 .logo {
    margin-top: 20px;
    margin-left: 50px;
+
+   @media only screen and (max-width: 425px) {
+      margin-left: 0px;
+   }
 }

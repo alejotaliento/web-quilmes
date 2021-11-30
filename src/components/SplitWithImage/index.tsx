@@ -23,7 +23,7 @@ export const SplitWithImage: React.FC<SplitWithImageProps> = ({
          <SimpleGrid columns={{ base: 1, md: 2 }} h={isLargerThan768 ? "auto" : "100vh"}>
             {image.side && image.side === "left" && (
                <Flex className={image.className} h="full" w="full">
-                  <Image alt={"feature image"} objectFit={"cover"} src={image.url} width="100%" />
+                  <Image alt={"feature image"} src={image.url} width="100%" />
                </Flex>
             )}
             {children}

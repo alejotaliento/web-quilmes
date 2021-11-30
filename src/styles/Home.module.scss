@@ -43,6 +43,17 @@
    }
 }
 
+/* LAST SECTION */
+
+.imageLastSection {
+   height: 100vh !important;
+
+   @media only screen and (max-width: 425px) {
+      height: auto !important;
+   }
+}
+
+/* BUTTONS */
 .buttonBanner {
    width: 120px !important;
    height: 35px !important;

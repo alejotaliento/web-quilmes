@@ -13,7 +13,7 @@ export const Card = ({ product }: CardProps) => {
    return (
       <Center paddingY={4}>
          <Box paddingX={2} pos={"relative"} role={"group"} rounded={"md"} w={"full"} zIndex={1}>
-            <Box bgColor="white" height={250} rounded="md">
+            <Box bgColor="transparent" height={250} rounded="md">
                <Image
                   height={250}
                   objectFit="cover"

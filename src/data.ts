@@ -7,14 +7,14 @@ export const dataCervezas: Cerverza[] = [
       _id: 1,
       name: "CLASICA",
       image: {
-         url: "https://cdn.shopify.com/s/files/1/1103/5152/products/Lata_Quilmes_Casica_473_ml_1000_X_2048_1024x1024.jpg?v=1569176607",
+         url: "https://i.postimg.cc/kM8NycCB/transpp-clasic.png",
       },
    },
    {
       _id: 2,
       name: "STOUT",
       image: {
-         url: "https://hhmayorista.com.ar/wp-content/uploads/2021/05/CERVEZA-QUILMES-STOUT-LATA.png",
+         url: "https://i.postimg.cc/nM8zwBtx/stout-transp.png",
       },
    },
    {
@@ -22,7 +22,7 @@ export const dataCervezas: Cerverza[] = [
 
       name: "RED LAGER",
       image: {
-         url: "https://www.distribuidoraelescoces.com/database/articulos/fotos/2472/QUILMES%20RED%20LAGER_473CC_1.jpg",
+         url: "https://i.postimg.cc/jSXQVd3N/red-lager-transp.png",
       },
    },
    {
@@ -30,7 +30,7 @@ export const dataCervezas: Cerverza[] = [
 
       name: "BOCK",
       image: {
-         url: "https://alfanea.com.ar/wp-content/uploads/2020/09/Quilmes_Bock_Lata_473_cc-478x550.jpg",
+         url: "https://i.postimg.cc/nLKvKVBM/bocker-transp.png",
       },
    },
    {
@@ -38,7 +38,7 @@ export const dataCervezas: Cerverza[] = [
 
       name: "CERO CERO",
       image: {
-         url: "https://bluemonk.com.ar/304-thickbox_default/quilmes-0-24x473cc.jpg",
+         url: "https://i.postimg.cc/1XHfj4MY/cerootransp.png",
       },
    },
    {
@@ -46,10 +46,18 @@ export const dataCervezas: Cerverza[] = [
 
       name: "DOBLE MALTA",
       image: {
-         url: "https://cdn.shopify.com/s/files/1/1103/5152/products/CervezaQuilmesDobleMalta410ml_1024x1024.png?v=1636748093",
+         url: "https://i.postimg.cc/LsbF4SQQ/dblemalta-transp.png",
       },
    },
 ];
+
+export const dataImagesBanner = {
+   section1:
+      "https://image.freepik.com/free-photo/glass-bottles-beer-with-glass-ice-dark-background_1150-8901.jpg",
+   section2: "https://i.postimg.cc/xjMNB5xm/wil-stewart-UEr-Wo-QEo-Mrc-unsplash.jpg",
+   section3:
+      "https://1.bp.blogspot.com/-PaFsTB1ELJU/XC0dXQ955VI/AAAAAAAAuPY/ALT979M24GQit-Qy25rwSUsLB1CRH-hwACLcBGAs/w1200-h630-p-k-no-nu/M%25C3%25A1quina%2BRegadora%2Bde%2Bla%2BMunicipalidad%2Bde%2Bla%2BCiudad%2Bde%2BMendoza.%2B%2528a%25C3%25B1o%2B1916%2529.jpg",
+};
 
 export const dataImages = {
    logoQuilmes:

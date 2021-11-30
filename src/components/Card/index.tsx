@@ -17,6 +17,7 @@ export const Card = ({ product }: CardProps) => {
                <Image
                   height={250}
                   objectFit="cover"
+                  objectPosition="center"
                   rounded="md"
                   src={product.image.url}
                   width={150}
@@ -29,6 +30,7 @@ export const Card = ({ product }: CardProps) => {
                </Text>
                <Stack align={"center"} direction="column">
                   <Button
+                     _hover={{ bg: "#ffe922" }}
                      bgColor="transparent"
                      border="2px solid"
                      borderColor="#ffe922"

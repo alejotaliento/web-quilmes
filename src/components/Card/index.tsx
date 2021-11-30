@@ -38,7 +38,7 @@ export const Card = ({ product }: CardProps) => {
                   >
                      Comprar
                   </Button>
-                  <Text fontSize={15}>VER MAS</Text>
+                  <Text fontSize={14}>VER MAS</Text>
                </Stack>
             </Stack>
          </Box>

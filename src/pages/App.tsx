@@ -8,12 +8,13 @@ import {
    Box,
    useMediaQuery,
    Image,
+   Divider,
 } from "@chakra-ui/react";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
 import { Banner, Card, SplitWithImage } from "../components";
 import styles from "../styles/Home.module.scss";
-import { dataCervezas } from "../data";
+import { dataCervezas, dataImagesBanner } from "../data";
 
 function App() {
    const [isLargerThan425] = useMediaQuery("(max-width: 425px)");
@@ -22,10 +23,7 @@ function App() {
    return (
       <>
          <Box as="section" className={styles.principalSection}>
-            <Banner
-               flexProps={{ height: "100vh" }}
-               image="https://image.freepik.com/free-photo/glass-bottles-beer-with-glass-ice-dark-background_1150-8901.jpg"
-            >
+            <Banner flexProps={{ height: "100vh" }} image={dataImagesBanner.section1}>
                <Stack
                   alignItems={isLargerThan425 ? "center" : "flex-start"}
                   bgGradient="linear(to-r, blackAlpha.600, transparent)"
@@ -84,15 +82,11 @@ function App() {
                   alignItems: "center",
                   minHeight: "700px",
                   height: isLargerThan425 ? "auto" : "100vh",
-                  bgColor: isLargerThan425 ? "#fafafa7a" : "",
+                  bgColor: isLargerThan425 ? "" : "",
                }}
-               image={
-                  isLargerThan425
-                     ? ""
-                     : "https://i.postimg.cc/xjMNB5xm/wil-stewart-UEr-Wo-QEo-Mrc-unsplash.jpg"
-               }
+               image={isLargerThan425 ? "" : dataImagesBanner.section2}
             >
-               <Stack h="100%" marginY={20} padding={25} textAlign="center">
+               <Stack h="100%" justifyContent="center" marginY={20} padding={25} textAlign="center">
                   <VStack spacing={5}>
                      <Text as="h1" className={styles.title}>
                         NUESTRAS VARIEDADES
@@ -128,15 +122,17 @@ function App() {
             </Banner>
          </Box>
 
+         {isLargerThan425 && <Divider marginY={15} />}
+
          <Box as="section">
             <SplitWithImage
                containerProps={{
                   bgColor: "#031532",
                }}
-               image={
-                  "https://image.freepik.com/foto-gratis/primer-plano-hombres-brindando-cerveza_171337-13664.jpg"
-               }
-               imageOrientation="right"
+               image={{
+                  url: "https://image.freepik.com/foto-gratis/primer-plano-hombres-brindando-cerveza_171337-13664.jpg",
+                  side: "right",
+               }}
             >
                <VStack
                   align="flex-start"
@@ -170,7 +166,7 @@ function App() {
          <Box as="section">
             <Banner
                flexProps={{ height: "100vh", justify: "center" }}
-               image="https://1.bp.blogspot.com/-PaFsTB1ELJU/XC0dXQ955VI/AAAAAAAAuPY/ALT979M24GQit-Qy25rwSUsLB1CRH-hwACLcBGAs/w1200-h630-p-k-no-nu/M%25C3%25A1quina%2BRegadora%2Bde%2Bla%2BMunicipalidad%2Bde%2Bla%2BCiudad%2Bde%2BMendoza.%2B%2528a%25C3%25B1o%2B1916%2529.jpg"
+               image={dataImagesBanner.section3}
             >
                <Stack
                   align="center"
@@ -205,15 +201,21 @@ function App() {
             <SplitWithImage
                containerProps={{
                   bgColor: "#031532",
+                  height: isLargerThan425 ? "auto" : "100vh",
                }}
-               image={"https://cdn.pixabay.com/photo/2017/03/22/18/37/beer-2166004_1280.jpg"}
-               imageOrientation="left"
+               image={{
+                  url: "https://i.postimg.cc/SQ16kx4b/banner-1-550.png",
+                  side: "left",
+                  className: styles.imageLastSection,
+               }}
             >
                <Image
                   alt="IMAGE"
-                  height="100%"
-                  opacity={0.8}
-                  src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+                  height={isLargerThan425 ? "auto" : "100vh"}
+                  objectPosition="center"
+                  opacity={0.9}
+                  src="https://i.postimg.cc/HWtpyrxF/Mesa-de-trabajo-8.png"
+                  width="100%"
                />
             </SplitWithImage>
          </Box>

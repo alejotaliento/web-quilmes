@@ -13,7 +13,7 @@ export const Header = () => {
                <Image
                   alt="Segun Adebayo"
                   className={styles.logo}
-                  src={dataImages.logoHeader}
+                  src={dataImages.logoQuilmes}
                   width={90}
                />
             </Flex>

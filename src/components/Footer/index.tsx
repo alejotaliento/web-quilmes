@@ -39,7 +39,7 @@ export const Footer = () => {
                alt="Logo Footer"
                cursor="pointer"
                margin="15px"
-               src={dataImages.logoHeader}
+               src={dataImages.logoQuilmes}
                width="180px"
             />
 

@@ -25,7 +25,16 @@ h3 {
 }
 
 h1 {
+  font-size: 30px;
   font-family: Century;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 h2,

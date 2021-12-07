@@ -8,9 +8,6 @@
    @media only screen and (max-width: 768px) {
       font-size: 40px;
    }
-
-   @media only screen and (max-width: 425px) {
-   }
 }
 .subtitle {
    color: white;
@@ -43,6 +40,17 @@
    }
 }
 
+/* LAST SECTION */
+
+.imageLastSection {
+   height: 100vh !important;
+
+   @media only screen and (max-width: 425px) {
+      height: 100% !important;
+   }
+}
+
+/* BUTTONS */
 .buttonBanner {
    width: 120px !important;
    height: 35px !important;

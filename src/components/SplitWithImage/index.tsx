@@ -2,32 +2,34 @@ import React from "react";
 import { Container, SimpleGrid, Image, Flex, useMediaQuery } from "@chakra-ui/react";
 import type { ContainerProps } from "@chakra-ui/react";
 
-export interface SplitWithImage {
+export interface SplitWithImageProps {
    containerProps?: ContainerProps;
-   image: string;
-   imageOrientation: "left" | "right";
+   image: {
+      url: string;
+      side?: "left" | "right";
+      className?: string;
+   };
 }
 
-export const SplitWithImage: React.FC<SplitWithImage> = ({
+export const SplitWithImage: React.FC<SplitWithImageProps> = ({
    children,
    image,
    containerProps,
-   imageOrientation,
 }) => {
    const [isLargerThan768] = useMediaQuery("(max-width: 768px)");
 
    return (
       <Container maxW="full" padding={0} {...containerProps}>
          <SimpleGrid columns={{ base: 1, md: 2 }} h={isLargerThan768 ? "auto" : "100vh"}>
-            {imageOrientation && imageOrientation === "left" && (
-               <Flex h="full" w="full">
-                  <Image alt={"feature image"} objectFit={"cover"} src={image} width="100%" />
+            {image.side && image.side === "left" && (
+               <Flex className={image.className} h="full" w="full">
+                  <Image alt={"feature image"} src={image.url} width="100%" />
                </Flex>
             )}
             {children}
-            {imageOrientation && imageOrientation === "right" && (
-               <Flex h="full" w="full">
-                  <Image alt={"feature image"} objectFit={"cover"} src={image} width="100%" />
+            {image.side && image.side === "right" && (
+               <Flex className={image.className} h="full" w="full">
+                  <Image alt={"feature image"} objectFit={"cover"} src={image.url} width="100%" />
                </Flex>
             )}
          </SimpleGrid>

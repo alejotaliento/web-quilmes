@@ -13,10 +13,11 @@ export const Card = ({ product }: CardProps) => {
    return (
       <Center paddingY={4}>
          <Box paddingX={2} pos={"relative"} role={"group"} rounded={"md"} w={"full"} zIndex={1}>
-            <Box bgColor="white" height={250} rounded="md">
+            <Box bgColor="transparent" height={250} rounded="md">
                <Image
                   height={250}
                   objectFit="cover"
+                  objectPosition="center"
                   rounded="md"
                   src={product.image.url}
                   width={150}
@@ -29,6 +30,7 @@ export const Card = ({ product }: CardProps) => {
                </Text>
                <Stack align={"center"} direction="column">
                   <Button
+                     _hover={{ bg: "#ffe922" }}
                      bgColor="transparent"
                      border="2px solid"
                      borderColor="#ffe922"
@@ -36,7 +38,7 @@ export const Card = ({ product }: CardProps) => {
                   >
                      Comprar
                   </Button>
-                  <Text fontSize={15}>VER MAS</Text>
+                  <Text fontSize={14}>VER MAS</Text>
                </Stack>
             </Stack>
          </Box>

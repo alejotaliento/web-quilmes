@@ -16,11 +16,11 @@ export const SplitWithImage: React.FC<SplitWithImageProps> = ({
    image,
    containerProps,
 }) => {
-   const [isLargerThan768] = useMediaQuery("(max-width: 768px)");
+   const [isTablet] = useMediaQuery("(max-width: 768px)");
 
    return (
       <Container maxW="full" padding={0} {...containerProps}>
-         <SimpleGrid columns={{ base: 1, md: 2 }} h={isLargerThan768 ? "auto" : "100vh"}>
+         <SimpleGrid columns={{ base: 1, md: 2 }} h={isTablet ? "auto" : "100vh"}>
             {image.side && image.side === "left" && (
                <Flex className={image.className} h="full" w="full">
                   <Image alt={"feature image"} src={image.url} width="100%" />

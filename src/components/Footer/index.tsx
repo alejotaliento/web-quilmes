@@ -15,8 +15,8 @@ import { SocialButton } from "../SocialButton";
 import { dataImages } from "../../data";
 
 export const Footer = () => {
-   const [isLargerThan425] = useMediaQuery("(max-width: 425px)");
-   const [isLargerThan768] = useMediaQuery("(max-width: 768px)");
+   const [isMobile] = useMediaQuery("(max-width: 425px)");
+   const [isTablet] = useMediaQuery("(max-width: 768px)");
 
    return (
       /* TODO: Arreglar space-between entre los elementos del footer */
@@ -48,22 +48,22 @@ export const Footer = () => {
                   alignItems="center"
                   alignSelf="center"
                   display="flex"
-                  flexDirection={isLargerThan768 ? "column" : "row"}
+                  flexDirection={isTablet ? "column" : "row"}
                   textAlign="center"
                >
                   <Text>POLITICA DE PRIVACIDAD</Text>
                   <Divider
                      bgColor="white"
-                     height={isLargerThan768 ? "1px" : "15px"}
+                     height={isTablet ? "1px" : "15px"}
                      margin="10px"
-                     orientation={isLargerThan768 ? "horizontal" : "vertical"}
+                     orientation={isTablet ? "horizontal" : "vertical"}
                   />
                   <Text>BASES Y CONDICIONES</Text>
                   <Divider
                      bgColor="white"
-                     height={isLargerThan768 ? "1px" : "15px"}
+                     height={isTablet ? "1px" : "15px"}
                      margin="10px"
-                     orientation={isLargerThan768 ? "horizontal" : "vertical"}
+                     orientation={isTablet ? "horizontal" : "vertical"}
                   />
                   <Text>OPORTUNIDADES LABORALES</Text>
                </Box>
@@ -74,11 +74,7 @@ export const Footer = () => {
                </Text>
             </Stack>
 
-            <Stack
-               direction={isLargerThan425 ? "row" : "column"}
-               margin="15px !important"
-               spacing={6}
-            >
+            <Stack direction={isMobile ? "row" : "column"} margin="15px !important" spacing={6}>
                <SocialButton href={"#"} label={"Twitter"}>
                   <FaTwitter size={30} />
                </SocialButton>

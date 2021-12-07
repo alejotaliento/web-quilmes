@@ -17,15 +17,15 @@ import styles from "../styles/Home.module.scss";
 import { dataCervezas, dataImagesBanner } from "../data";
 
 function App() {
-   const [isLargerThan425] = useMediaQuery("(max-width: 425px)");
-   const [isLargerThan768] = useMediaQuery("(max-width: 768px)");
+   const [isMobile] = useMediaQuery("(max-width: 425px)");
+   const [isTablet] = useMediaQuery("(max-width: 768px)");
 
    return (
       <>
          <Box as="section" className={styles.principalSection}>
             <Banner flexProps={{ height: "100vh" }} image={dataImagesBanner.section1}>
                <Stack
-                  alignItems={isLargerThan425 ? "center" : "flex-start"}
+                  alignItems={isMobile ? "center" : "flex-start"}
                   bgGradient="linear(to-r, blackAlpha.600, transparent)"
                   className={styles.example}
                   justifyContent="center"
@@ -57,7 +57,7 @@ function App() {
                <Box
                   alignSelf="flex-end"
                   justifySelf="center"
-                  left={isLargerThan425 ? "45%" : "47%"}
+                  left={isMobile ? "45%" : "47%"}
                   position="absolute"
                   right="50%"
                >
@@ -81,10 +81,10 @@ function App() {
                   justifyContent: "center",
                   alignItems: "center",
                   minHeight: "700px",
-                  height: isLargerThan425 ? "auto" : "100vh",
-                  bgColor: isLargerThan425 ? "" : "",
+                  height: isMobile ? "auto" : "100vh",
+                  bgColor: isMobile ? "" : "",
                }}
-               image={isLargerThan425 ? "" : dataImagesBanner.section2}
+               image={isMobile ? "" : dataImagesBanner.section2}
             >
                <Stack h="100%" justifyContent="center" marginY={20} padding={25} textAlign="center">
                   <VStack spacing={5}>
@@ -93,13 +93,13 @@ function App() {
                      </Text>
                      <Text as="h2" className={styles.subtitle}>
                         Tenemos la cerveza perfecta para cada momento. Elegí la
-                        {!isLargerThan425 && <br />} que más te guste y disfrútala con amigos.
+                        {!isMobile && <br />} que más te guste y disfrútala con amigos.
                      </Text>
                   </VStack>
                   <Stack
                      alignItems="center"
                      alignSelf="center"
-                     direction={isLargerThan425 ? "column" : "row"}
+                     direction={isMobile ? "column" : "row"}
                      justify="center"
                      minHeight={500}
                   >
@@ -122,7 +122,7 @@ function App() {
             </Banner>
          </Box>
 
-         {isLargerThan425 && <Divider marginY={15} />}
+         {isMobile && <Divider marginY={15} />}
 
          <Box as="section">
             <SplitWithImage
@@ -150,7 +150,7 @@ function App() {
                      alignSelf="center"
                      as="h2"
                      className={styles.subtitle}
-                     fontSize={isLargerThan768 ? "15px" : "35px"}
+                     fontSize={isTablet ? "15px" : "35px"}
                      width="85%"
                   >
                      Además de la Quilmes que <br /> tomás en tu casa queremos que disfrutes la que
@@ -201,7 +201,7 @@ function App() {
             <SplitWithImage
                containerProps={{
                   bgColor: "#031532",
-                  height: isLargerThan425 ? "auto" : "100vh",
+                  height: isMobile ? "auto" : "100vh",
                }}
                image={{
                   url: "https://i.postimg.cc/SQ16kx4b/banner-1-550.png",
@@ -211,7 +211,7 @@ function App() {
             >
                <Image
                   alt="IMAGE"
-                  height={isLargerThan425 ? "auto" : "100vh"}
+                  height={isMobile ? "auto" : "100vh"}
                   objectPosition="center"
                   opacity={0.9}
                   src="https://i.postimg.cc/HWtpyrxF/Mesa-de-trabajo-8.png"

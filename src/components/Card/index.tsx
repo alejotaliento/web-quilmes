@@ -8,7 +8,7 @@ export interface CardProps {
 }
 
 export const Card = ({ product }: CardProps) => {
-   const isLargerThan768 = useMediaQuery("(max-width: 768px)");
+   const isTablet = useMediaQuery("(max-width: 768px)");
 
    return (
       <Center paddingY={4}>
@@ -25,7 +25,7 @@ export const Card = ({ product }: CardProps) => {
                />
             </Box>
             <Stack align={"center"} color="white" pt={2}>
-               <Text as="h2" fontFamily="Arial" fontSize={isLargerThan768 ? 14 : 18}>
+               <Text as="h2" fontFamily="Arial" fontSize={isTablet ? 14 : 18}>
                   {product.name}
                </Text>
                <Stack align={"center"} direction="column">

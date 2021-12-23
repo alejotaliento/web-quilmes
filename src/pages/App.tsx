@@ -134,9 +134,17 @@ function App() {
                   side: "right",
                }}
             >
+               <div className={styles.container}>
+                  <div className={styles.miscellaneus} />
+                  <div className={styles.dot}>
+                     <div className={styles.dotBorder} />
+                  </div>
+               </div>
+
                <VStack
                   align="flex-start"
                   justify="center"
+                  justifySelf="center"
                   maxW="2xl"
                   px={useBreakpointValue({ base: 4, md: 8 })}
                   spacing={4}
@@ -214,7 +222,7 @@ function App() {
                   height={isMobile ? "auto" : "100vh"}
                   objectPosition="center"
                   opacity={0.9}
-                  src="https://i.postimg.cc/HWtpyrxF/Mesa-de-trabajo-8.png"
+                  src="https://i.postimg.cc/j2t5f6xN/Grupo-3.png"
                   width="100%"
                />
             </SplitWithImage>

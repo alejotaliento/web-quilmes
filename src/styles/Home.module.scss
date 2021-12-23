@@ -79,3 +79,52 @@
    margin: 10px;
    padding: 0px !important;
 }
+
+.container {
+   position: absolute;
+   align-self: center;
+   margin-bottom: 324px;
+   margin-left: 5%;
+   height: 30px;
+   width: 30px;
+   border-radius: 50%;
+   display: inline-flex;
+   text-align: center;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+
+   .miscellaneus {
+      border: 3px solid #fff;
+      width: 6.5em;
+      margin-right: 10px;
+      position: absolute;
+   }
+   
+   .dot {
+      position: absolute;
+      align-self: center;
+      border: 2px solid #fff;
+      margin-left: 135px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      text-align: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+   }
+   
+   .dotBorder {
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      display: inline-block;
+      background-color: #fff;
+   }
+}

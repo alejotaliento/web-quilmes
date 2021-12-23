@@ -1,11 +1,12 @@
 .root {
+   order: 100;
    display: flex;
    justify-content: space-between;
    height: 75px;
-   background: linear-gradient(0deg, transparent, #000);
+   background: #031532;
    color: #fff;
    align-items: center;
-   position: absolute;
+   position: fixed;
    width: 100%;
 
    @media only screen and (max-width: 425px) {
@@ -14,8 +15,8 @@
 }
 
 .logo {
-   margin-top: 20px;
-   margin-left: 50px;
+   margin-top: 10px;
+   margin-left: 40px;
 
    @media only screen and (max-width: 425px) {
       margin-left: 0px;

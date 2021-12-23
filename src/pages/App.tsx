@@ -134,12 +134,14 @@ function App() {
                   side: "right",
                }}
             >
-               <div className={styles.container}>
-                  <div className={styles.miscellaneus} />
-                  <div className={styles.dot}>
-                     <div className={styles.dotBorder} />
+               {!isTablet && (
+                  <div className={styles.container}>
+                     <div className={styles.miscellaneus} />
+                     <div className={styles.dot}>
+                        <div className={styles.dotBorder} />
+                     </div>
                   </div>
-               </div>
+               )}
 
                <VStack
                   align="flex-start"
